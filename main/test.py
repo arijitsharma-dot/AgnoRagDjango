@@ -26,23 +26,34 @@ django.setup()
 # from documents.utils.vector_store import add_chunks
 
 # doc = Document.objects.first()
-# text = extract_text_from_pdf(doc.file.path)
-# chunks = chunk_text(text)
+# print(doc.file.path)
 
+# text = extract_text_from_pdf(doc.file.path)
+# print(len(text))
+# chunks = chunk_text(text)
+# print(len(chunks))
 # embeddings = embed_texts(chunks)
+
 # add_chunks(chunks, embeddings)
 
 # len(chunks)
 # ---------------------------------------
 
-from documents.utils.embeddings import embed_texts
-from documents.utils.vector_store import search_similar
+# from documents.utils.embeddings import embed_texts
+# from documents.utils.vector_store import search_similar
 
-query = "What is arijit"
-query_emb = embed_texts([query])[0]
+# query = "arijit"
+# query_emb = embed_texts([query])[0]
 
-results = search_similar(query_emb)
+# results = search_similar(query_emb)
 
-results[0]["text"][:200]
-results[0]["score"]
+# results[0]["text"][:200]
+# results[0]["score"]
 
+from chat.services.agent import chat_with_agent
+
+from chat.services.agent import chat_with_agent
+
+print(chat_with_agent("arijit"))
+print("-" * 50)
+print(chat_with_agent("Who is India?"))
